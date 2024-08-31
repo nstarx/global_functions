@@ -4,7 +4,7 @@ import java.util.UUID
 
 object Edge {
 
-  def replaceUriPlaceholders(uri: String, envVars: Map[String, String]): String = {
+  def location(uri: String, envVars: Map[String, String]): String = {
     val PZ_NAME = envVars.getOrElse("PZ_NAME", "NOT_SET")
     val REGION = envVars.getOrElse("REGION", "NOT_SET")
     val NS = envVars.getOrElse("NS", "NOT_SET")
@@ -23,6 +23,7 @@ object Edge {
   }
 }
 
+/*
 object MainApp {
   def main(args: Array[String]): Unit = {
     val envVars = Map(
@@ -31,10 +32,12 @@ object MainApp {
       "NS" -> "dev"
     )
 
-    val sample = Edge.replaceUriPlaceholders(
+    val sample = Edge.location(
       "s3://$ROOT/Feast_features_spaces_comparison/datasets/$DATE/$TIME/$UUID/", 
       envVars
     )
     println(sample)
   }
 }
+*/
+
